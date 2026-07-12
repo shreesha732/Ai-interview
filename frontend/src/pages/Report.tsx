@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { useStore, InterviewReport } from "../store/useStore";
-import { ArrowLeft, Download, Target, Activity, Zap, ShieldCheck, UserFocus } from "lucide-react";
+import { ArrowLeft, Download, Target, Activity, Zap, ShieldCheck, User } from "lucide-react";
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from "recharts";
 import html2pdf from "html2pdf.js";
 
@@ -84,7 +84,7 @@ export function Report() {
             
             <div className="p-4 bg-muted rounded-lg flex items-center justify-between border border-border">
               <div className="flex items-center gap-2">
-                <UserFocus className="w-5 h-5 text-orange-500" />
+                <User className="w-5 h-5 text-orange-500" />
                 <span className="font-semibold text-muted-foreground">Body Language (CV Analytics)</span>
               </div>
               <span className="text-2xl font-bold text-orange-500">{report.bodyLanguageScore}/10</span>

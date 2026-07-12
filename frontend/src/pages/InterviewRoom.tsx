@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import Webcam from "react-webcam";
-import { Mic, MicOff, Video as VideoIcon, VideoOff, Square, PlayCircle, Loader2, Target, Zap, AlertTriangle, Activity, CheckCircle2, UserFocus, Eye } from "lucide-react";
+import { Mic, MicOff, Video as VideoIcon, VideoOff, Square, PlayCircle, Loader2, Target, Zap, AlertTriangle, Activity, CheckCircle2, User, Eye } from "lucide-react";
 import { cn } from "../lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaceLandmarker, FilesetResolver } from "@mediapipe/tasks-vision";
@@ -424,7 +424,7 @@ export function InterviewRoom() {
             {isRecording && isVideoOn && (
               <div className="absolute top-4 right-4 flex flex-col gap-2">
                 <div className="px-3 py-1.5 bg-black/60 backdrop-blur text-white rounded-md flex items-center gap-2">
-                  <UserFocus className={cn("w-4 h-4", liveCVAnalytics.faceVisibilityScore > 80 ? "text-green-500" : "text-red-500")} />
+                  <User className={cn("w-4 h-4", liveCVAnalytics.faceVisibilityScore > 80 ? "text-green-500" : "text-red-500")} />
                   <span className="text-xs font-medium">Face: {liveCVAnalytics.faceVisibilityScore}%</span>
                 </div>
                 <div className="px-3 py-1.5 bg-black/60 backdrop-blur text-white rounded-md flex items-center gap-2">

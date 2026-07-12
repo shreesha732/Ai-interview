@@ -51,7 +51,7 @@ export function LandingPage() {
                 <SignInButton mode="modal">Start Practicing Free</SignInButton>
                 <ArrowRight className="w-5 h-5" />
               </div>
-            </div >
+            </motion.div>
           </motion.div>
         </div>
       </section>

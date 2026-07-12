@@ -1,4 +1,4 @@
-from langchain.prompts import PromptTemplate
+from langchain_core.prompts import PromptTemplate
 
 EVALUATE_ANSWER_PROMPT = PromptTemplate(
     template="""You are an expert interviewer and communication coach evaluating a candidate's answer.
@@ -39,6 +39,9 @@ Previous Questions Asked:
 Generate the next interview question for the candidate. It should be highly relevant to their background and the interview type. It must match the target difficulty level.
 DO NOT repeat previous questions.
 Only return the text of the question.
+
+{format_instructions}
 """,
-    input_variables=["interview_type", "resume_summary", "difficulty", "previous_questions"]
+    input_variables=["interview_type", "resume_summary", "difficulty", "previous_questions"],
+    partial_variables={"format_instructions": ""}
 )
