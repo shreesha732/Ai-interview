@@ -1,6 +1,6 @@
 # InterviewAI 🚀
 
-**🌍 Live Demo:** [https://ai-interview-8crizdis1-shreeshas-projects-9c630a50.vercel.app/](https://ai-interview-8crizdis1-shreeshas-projects-9c630a50.vercel.app/)
+**🌍 Live Demo:** [https://ai-interview-silk-nu.vercel.app/](https://ai-interview-silk-nu.vercel.app/)
 
 InterviewAI is a state-of-the-art SaaS platform designed to simulate real-world technical and behavioral interviews using advanced AI. It analyzes a candidate's resume, generates adaptive questions, tracks eye contact/body language via MediaPipe, and evaluates verbal responses using NLP to provide a comprehensive performance report.
 
