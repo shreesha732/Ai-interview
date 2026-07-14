@@ -1,5 +1,7 @@
 # InterviewAI 🚀
 
+**🌍 Live Demo:** [https://ai-interview-8crizdis1-shreeshas-projects-9c630a50.vercel.app/](https://ai-interview-8crizdis1-shreeshas-projects-9c630a50.vercel.app/)
+
 InterviewAI is a state-of-the-art SaaS platform designed to simulate real-world technical and behavioral interviews using advanced AI. It analyzes a candidate's resume, generates adaptive questions, tracks eye contact/body language via MediaPipe, and evaluates verbal responses using NLP to provide a comprehensive performance report.
 
 ## 🌟 Features
@@ -16,7 +18,7 @@ InterviewAI is a state-of-the-art SaaS platform designed to simulate real-world 
 ## 🏗 Architecture
 
 - **Frontend**: React (TypeScript), Vite, Tailwind CSS v4, Zustand, Framer Motion, React-Webcam.
-- **Backend**: Python, Flask, PyPDF2, LangChain, OpenAI/Gemini.
+- **Backend**: Python, Flask, PyPDF2, LangChain, **Groq Llama 3**.
 - **Database**: PostgreSQL (via Supabase), SQLAlchemy.
 - **Auth**: Clerk.
 
@@ -59,7 +61,7 @@ python app.py
 4. Build Command: `pip install -r requirements.txt`
 5. Start Command: `gunicorn app:app`
 6. Add necessary Environment Variables:
-   - `OPENAI_API_KEY`: Your OpenAI API key
+   - `GROQ_API_KEY`: Your Groq API key
    - `SUPABASE_URL`: Your Supabase Project URL
    - `SUPABASE_KEY`: Your Supabase Anon Key
    - `FRONTEND_URL`: URL of your deployed frontend (optional, for CORS)
