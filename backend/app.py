@@ -28,7 +28,7 @@ def health_check():
 
 from pydantic import BaseModel, Field
 from typing import List, Optional, Any
-from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_groq import ChatGroq
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import PydanticOutputParser
 from prompts import EVALUATE_ANSWER_PROMPT, GENERATE_QUESTION_PROMPT
@@ -101,11 +101,11 @@ def parse_resume():
             if not text.strip():
                  return jsonify({"error": "Could not extract text from the PDF."}), 400
 
-            api_key = os.environ.get("GEMINI_API_KEY")
+            api_key = os.environ.get("GROQ_API_KEY")
             if not api_key:
-                return jsonify({"error": "Gemini API Key is missing."}), 500
+                return jsonify({"error": "Groq API Key is missing."}), 500
 
-            llm = ChatGoogleGenerativeAI(temperature=0, model="gemini-2.0-flash", google_api_key=api_key)
+            llm = ChatGroq(temperature=0, model_name="llama3-70b-8192", groq_api_key=api_key)
             parser = PydanticOutputParser(pydantic_object=ResumeData)
             
             prompt = PromptTemplate(
@@ -166,11 +166,11 @@ def evaluate_and_generate():
     current_difficulty = data.get('current_difficulty', 5)
     history = data.get('history', []) 
     
-    api_key = os.environ.get("GEMINI_API_KEY")
+    api_key = os.environ.get("GROQ_API_KEY")
     if not api_key:
-        return jsonify({"error": "Missing Gemini API Key in backend configuration."}), 500
+        return jsonify({"error": "Missing Groq API Key in backend configuration."}), 500
         
-    llm = ChatGoogleGenerativeAI(temperature=0.7, model="gemini-2.0-flash", google_api_key=api_key)
+    llm = ChatGroq(temperature=0.7, model_name="llama3-70b-8192", groq_api_key=api_key)
     
     evaluation = None
     next_difficulty = current_difficulty
