@@ -105,7 +105,7 @@ def parse_resume():
             if not api_key:
                 return jsonify({"error": "Groq API Key is missing."}), 500
 
-            llm = ChatGroq(temperature=0, model_name="llama3-70b-8192", groq_api_key=api_key)
+            llm = ChatGroq(temperature=0, model_name="llama-3.3-70b-versatile", groq_api_key=api_key)
             parser = PydanticOutputParser(pydantic_object=ResumeData)
             
             prompt = PromptTemplate(
@@ -170,7 +170,7 @@ def evaluate_and_generate():
     if not api_key:
         return jsonify({"error": "Missing Groq API Key in backend configuration."}), 500
         
-    llm = ChatGroq(temperature=0.7, model_name="llama3-70b-8192", groq_api_key=api_key)
+    llm = ChatGroq(temperature=0.7, model_name="llama-3.3-70b-versatile", groq_api_key=api_key)
     
     evaluation = None
     next_difficulty = current_difficulty
